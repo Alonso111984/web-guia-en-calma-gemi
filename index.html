@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía en Calma | Herramienta práctica para padres y cuidadores</title>
+    <meta name="description" content="Una app web para padres y cuidadores que te ayuda a elegir la situación, encontrar palabras y primeros pasos, y registrar lo que observas.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0F172A',
+                            cream: '#FDFBF7',
+                            orange: '#F97316',
+                            teal: '#14B8A6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        
+        // Inicialización y PageView automático al cargar
+        fbq('init', '1765896677764440');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1765896677764440&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        /* Ocultar barra de scroll para carrusel mobile y diseño limpio */
+        ::-webkit-scrollbar { width: 0px; height: 0px; display: none; }
+        * { scrollbar-width: none; -ms-overflow-style: none; }
+        
+        /* Animación suave para el CTA Sticky */
+        .slide-up {
+            animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-navy font-inter antialiased pb-28 md:pb-24 selection:bg-brand-teal selection:text-white">
+
+    <!-- BLOQUE 1: IDENTIFICACIÓN + SOLUCIÓN -->
+    <header class="w-full px-5 pt-10 pb-12 md:pt-16 md:pb-20 max-w-4xl mx-auto flex flex-col items-center text-center">
+        
+        <!-- Gancho Visual Redondeado y Premium -->
+        <div class="relative inline-block bg-gradient-to-b from-brand-teal/10 to-transparent rounded-[2rem] p-3 mb-6 shadow-lg border border-brand-teal/10">
+            <img src="https://i.postimg.cc/bJ96zL0w/Diseno-sin-titulo-(17).png" alt="Situación de frustración al dar una instrucción" class="w-full max-w-[200px] md:max-w-[240px] mx-auto drop-shadow-xl hover:scale-105 transition-transform duration-500 ease-out rounded-[1.5rem] object-cover" loading="eager">
+        </div>
+        
+        <!-- Hook Principal Directo -->
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.15] mb-4 text-brand-navy max-w-3xl">
+            ¿Tu instrucción terminó en frustración y no sabes qué intentar después?
+        </h1>
+        
+        <!-- Solución Directa -->
+        <p class="text-lg md:text-xl text-slate-600 font-medium mb-6 max-w-2xl leading-relaxed">
+            Para esos momentos existe Guía en Calma.<br class="hidden md:block"> Una app web que te da las palabras exactas y un primer paso.
+        </p>
+
+        <!-- Etiqueta clara -->
+        <div class="inline-flex items-center gap-2 bg-brand-teal/10 text-brand-teal font-bold px-4 py-2 rounded-full text-xs md:text-sm tracking-wide mb-6 border border-brand-teal/20 shadow-sm">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zm0 16a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
+            ES UNA APP, NO UN EBOOK
+        </div>
+
+        <!-- Secuencia Visual Simplificada -->
+        <div class="flex items-center justify-center gap-2 md:gap-5 text-xs md:text-sm font-bold text-brand-navy mb-8 bg-white px-4 py-3 rounded-2xl shadow-sm border border-slate-100 w-full max-w-md">
+            <span>SITUACIÓN</span>
+            <svg class="w-4 h-4 text-brand-teal shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <span>PALABRAS</span>
+            <svg class="w-4 h-4 text-brand-teal shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <span>PRIMER PASO</span>
+        </div>
+
+        <!-- Captura Real de la App (Reducida) -->
+        <div class="relative w-full max-w-[220px] md:max-w-[260px] mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-white">
+            <img src="https://i.postimg.cc/bJmjjDXC/1.png" alt="Interfaz principal de la app Guía en Calma" class="w-full h-auto object-cover" loading="eager">
+        </div>
+        
+    </header>
+
+    <!-- BLOQUE 2: CÓMO FUNCIONA -->
+    <section class="w-full bg-white py-12 md:py-20 px-0 md:px-5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-6 px-5">
+                <h2 class="text-2xl md:text-4xl font-extrabold text-brand-navy mb-2">
+                    Cuando no sabes qué intentar después,<br class="hidden md:block"> no empiezas desde cero.
+                </h2>
+            </div>
+
+            <!-- Pasos (Scroll Horizontal Nativo en Mobile) -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 px-5 pb-4 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-6">
+                
+                <!-- Paso 1 -->
+                <div class="flex-none w-[75%] max-w-[260px] md:w-auto snap-center flex flex-col items-center text-center group">
+                    <div class="w-full aspect-[4/5] bg-slate-50 rounded-[2rem] overflow-hidden mb-4 shadow-sm border border-slate-100 flex items-center justify-center p-1.5 relative">
+                        <div class="absolute top-3 left-3 bg-brand-navy text-white font-bold w-7 h-7 rounded-full flex items-center justify-center z-10 text-xs">1</div>
+                        <img src="https://i.postimg.cc/5yGd6h2C/2.png" alt="Paso 1: Elige la situación" class="w-full h-full object-cover rounded-2xl" loading="lazy">
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-1">ELIGE LA SITUACIÓN</h3>
+                    <p class="text-slate-600 font-medium text-sm">Selecciona qué está pasando.</p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="flex-none w-[75%] max-w-[260px] md:w-auto snap-center flex flex-col items-center text-center group">
+                    <div class="w-full aspect-[4/5] bg-slate-50 rounded-[2rem] overflow-hidden mb-4 shadow-sm border border-slate-100 flex items-center justify-center p-1.5 relative">
+                        <div class="absolute top-3 left-3 bg-brand-navy text-white font-bold w-7 h-7 rounded-full flex items-center justify-center z-10 text-xs">2</div>
+                        <img src="https://i.postimg.cc/qBZdb3xJ/3.png" alt="Paso 2: Consulta la guía" class="w-full h-full object-cover rounded-2xl" loading="lazy">
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-1">CONSULTA LA GUÍA</h3>
+                    <p class="text-slate-600 font-medium text-sm">Encuentra palabras y un primer paso.</p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="flex-none w-[75%] max-w-[260px] md:w-auto snap-center flex flex-col items-center text-center group">
+                    <div class="w-full aspect-[4/5] bg-slate-50 rounded-[2rem] overflow-hidden mb-4 shadow-sm border border-slate-100 flex items-center justify-center p-1.5 relative">
+                        <div class="absolute top-3 left-3 bg-brand-navy text-white font-bold w-7 h-7 rounded-full flex items-center justify-center z-10 text-xs">3</div>
+                        <img src="https://i.postimg.cc/qMhH9v1b/4.png" alt="Paso 3: Registra lo que observas" class="w-full h-full object-cover rounded-2xl object-top" loading="lazy">
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-1">REGISTRA LO QUE OBSERVAS</h3>
+                    <p class="text-slate-600 font-medium text-sm">Identifica qué estrategias te sirven.</p>
+                </div>
+
+            </div>
+
+            <!-- Indicador visual de swipe (Solo Mobile) movido debajo de las imágenes -->
+            <div class="flex md:hidden items-center justify-center gap-2 text-brand-teal/80 text-[11px] font-bold mt-2 mb-4 animate-pulse">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                <span class="tracking-wider">DESLIZA PARA VER PASOS</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- BLOQUE 3: BENEFICIO + DIFERENCIACIÓN -->
+    <section class="w-full py-12 md:py-20 px-5 bg-brand-cream text-center">
+        <div class="max-w-4xl mx-auto">
+            
+            <h2 class="text-2xl md:text-4xl font-extrabold text-brand-navy mb-6 leading-tight">
+                NO ES INFORMACIÓN PARA GUARDAR.<br class="hidden md:block"> ES UNA HERRAMIENTA PARA USAR.
+            </h2>
+
+            <!-- Flujo simplificado -->
+            <div class="flex flex-wrap items-center justify-center gap-1.5 md:gap-3 text-xs md:text-sm font-bold text-brand-teal mb-6">
+                <span class="bg-white px-2.5 py-1 rounded-lg shadow-sm border border-slate-100">ELIGE</span>
+                <svg class="w-3.5 h-3.5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <span class="bg-white px-2.5 py-1 rounded-lg shadow-sm border border-slate-100">CONSULTA</span>
+                <svg class="w-3.5 h-3.5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <span class="bg-white px-2.5 py-1 rounded-lg shadow-sm border border-slate-100">PRUEBA</span>
+                <svg class="w-3.5 h-3.5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <span class="bg-white px-2.5 py-1 rounded-lg shadow-sm border border-slate-100">REGISTRA</span>
+            </div>
+
+            <p class="text-base md:text-lg text-slate-600 font-medium mb-8 max-w-2xl mx-auto">
+                Guía en Calma organiza palabras, primeros pasos y seguimiento en un mismo lugar.
+            </p>
+
+            <!-- Imagen Uso Real (Redondeada y Premium) -->
+            <div class="relative inline-block bg-gradient-to-b from-brand-orange/5 to-transparent rounded-[2rem] p-3 mb-10 shadow-lg border border-brand-orange/10">
+                <img src="https://i.postimg.cc/44zKxqh4/Diseno-sin-titulo-(37).png" alt="Padre consultando app" class="w-full max-w-[200px] md:max-w-[240px] mx-auto drop-shadow-xl rounded-[1.5rem] object-cover" loading="lazy">
+            </div>
+
+            <!-- 4 Beneficios Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-10">
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                    <span class="text-2xl mb-2">💬</span>
+                    <span class="font-bold text-brand-navy text-xs md:text-sm">SABER QUÉ DECIR</span>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                    <span class="text-2xl mb-2">👣</span>
+                    <span class="font-bold text-brand-navy text-xs md:text-sm">TENER UN PRIMER PASO</span>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                    <span class="text-2xl mb-2">📊</span>
+                    <span class="font-bold text-brand-navy text-xs md:text-sm">RECORDAR QUÉ PROBASTE</span>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                    <span class="text-2xl mb-2">🗓️</span>
+                    <span class="font-bold text-brand-navy text-xs md:text-sm">APOYAR RUTINAS</span>
+                </div>
+            </div>
+
+            <!-- Imagen Resolución (Redondeada y Premium) -->
+            <div class="relative inline-block bg-gradient-to-b from-brand-teal/5 to-transparent rounded-[2rem] p-3 mb-8 shadow-lg border border-brand-teal/10">
+                <img src="https://i.postimg.cc/NMxwW65v/Diseno-sin-titulo-(35).png" alt="Padre e hijo caminando tranquilos" class="w-full max-w-[180px] md:max-w-[220px] mx-auto drop-shadow-xl opacity-95 rounded-[1.5rem] object-cover" loading="lazy">
+            </div>
+
+            <!-- Disclaimers discretos -->
+            <div class="text-[11px] md:text-xs text-slate-400 max-w-2xl mx-auto leading-relaxed border-t border-slate-200 pt-6">
+                <p class="mb-1">También puede utilizarse como herramienta de apoyo cotidiano por familias con niños con TDAH.</p>
+                <p>Guía en Calma no diagnostica ni trata el TDAH y no sustituye orientación profesional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE 4: TODO LO QUE RECIBES (OFERTA) -->
+    <!-- Se agrega el id "seccion-oferta" para trackear el evento ViewContent -->
+    <section id="seccion-oferta" class="w-full py-12 px-4 md:px-5">
+        <div class="max-w-4xl mx-auto bg-brand-navy text-white rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            
+            <!-- Decoración sutil de fondo -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-teal/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            
+            <h2 class="text-2xl md:text-4xl font-extrabold mb-12 text-center relative z-10 text-white">
+                TODO LO QUE RECIBES
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                
+                <!-- Producto Principal: App -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 flex flex-col h-full">
+                    <div class="text-sm font-bold text-brand-teal tracking-wider mb-2">PRODUCTO PRINCIPAL</div>
+                    <h3 class="text-2xl font-bold text-white mb-1">GUÍA EN CALMA</h3>
+                    <div class="text-lg font-medium text-slate-300 mb-6 flex items-center gap-2">
+                        📱 App Web
+                    </div>
+                    
+                    <ul class="space-y-4 text-slate-200 mb-8 flex-grow text-sm md:text-base">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Palabras listas para usar
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Primeros pasos prácticos
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Situaciones cotidianas
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Seguimiento
+                        </li>
+                    </ul>
+
+                    <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-white/10 border border-white/5 flex items-center justify-center p-2">
+                        <!-- Usamos la imagen 1 como representación de la app -->
+                        <img src="https://i.postimg.cc/bJmjjDXC/1.png" alt="App Guía en Calma" class="w-full h-full object-cover rounded-xl" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Bonus: PDF -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-6 md:p-8 flex flex-col h-full text-brand-navy shadow-xl transform md:scale-105 relative z-20">
+                    <div class="absolute -top-4 right-6 bg-brand-orange text-white font-bold px-4 py-1 rounded-full text-sm shadow-md">
+                        GRATIS
+                    </div>
+                    <div class="text-sm font-bold text-brand-orange tracking-wider mb-2">🎁 BONUS</div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-1 leading-tight">KIT PREMIUM DE RUTINAS VISUALES</h3>
+                    <div class="text-base font-medium text-slate-500 mb-6 flex items-center gap-2">
+                        📄 Formato PDF
+                    </div>
+                    
+                    <p class="text-slate-600 mb-8 flex-grow text-sm md:text-base">
+                        Material visual para apoyar instrucciones y rutinas cotidianas.
+                    </p>
+
+                    <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 flex items-center justify-center p-2">
+                        <!-- Usamos la imagen 6 para el material visual/bonus -->
+                        <img src="https://i.postimg.cc/tgy0Ztpv/6.png" alt="Kit de Rutinas Visuales PDF" class="w-full h-full object-cover rounded-xl object-top" loading="lazy">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Precio Resumen -->
+            <div class="mt-12 text-center pt-8 border-t border-white/10 relative z-10">
+                <div class="text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
+                    $14.99 <span class="text-xl md:text-2xl font-bold text-slate-300">USD</span>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-3 text-sm md:text-base font-bold text-brand-teal">
+                    <span>UN SOLO PAGO</span>
+                    <span class="w-1.5 h-1.5 bg-brand-teal rounded-full"></span>
+                    <span>SIN MENSUALIDADES</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BLOQUE 5: FAQ -->
+    <section class="w-full py-16 px-5 bg-brand-cream">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-extrabold text-brand-navy mb-8 text-center">Preguntas Frecuentes</h2>
+            
+            <div class="space-y-2.5">
+                <!-- FAQ 1 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden" name="faq">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none px-4 py-3.5 text-brand-navy group-hover:text-brand-orange transition-colors">
+                        <span class="text-sm md:text-base">¿Guía en Calma es un ebook?</span>
+                        <span class="transition group-open:rotate-180 shrink-0 ml-2">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 px-4 pb-4 text-sm leading-relaxed">
+                        No. Guía en Calma es una app web. El Kit Premium de Rutinas Visuales se incluye como bonus en formato PDF.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden" name="faq">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none px-4 py-3.5 text-brand-navy group-hover:text-brand-orange transition-colors">
+                        <span class="text-sm md:text-base">¿Para quién es?</span>
+                        <span class="transition group-open:rotate-180 shrink-0 ml-2">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 px-4 pb-4 text-sm leading-relaxed">
+                        Para padres y cuidadores que buscan herramientas prácticas para instrucciones, frustraciones y rutinas cotidianas. También puede utilizarse como herramienta de apoyo por familias con niños con TDAH.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden" name="faq">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none px-4 py-3.5 text-brand-navy group-hover:text-brand-orange transition-colors">
+                        <span class="text-sm md:text-base">¿Qué recibo?</span>
+                        <span class="transition group-open:rotate-180 shrink-0 ml-2">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 px-4 pb-4 text-sm leading-relaxed">
+                        Acceso a la app Guía en Calma + Kit Premium de Rutinas Visuales en PDF.
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden" name="faq">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none px-4 py-3.5 text-brand-navy group-hover:text-brand-orange transition-colors">
+                        <span class="text-sm md:text-base">¿Tengo que pagar todos los meses?</span>
+                        <span class="transition group-open:rotate-180 shrink-0 ml-2">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 px-4 pb-4 text-sm leading-relaxed">
+                        No. Son $14.99 USD en un solo pago. No hay mensualidades.
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden" name="faq">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none px-4 py-3.5 text-brand-navy group-hover:text-brand-orange transition-colors">
+                        <span class="text-sm md:text-base">¿Guía en Calma trata el TDAH?</span>
+                        <span class="transition group-open:rotate-180 shrink-0 ml-2">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 px-4 pb-4 text-sm leading-relaxed">
+                        No. Guía en Calma es una herramienta de apoyo cotidiano. No diagnostica, trata ni sustituye la orientación de profesionales de la salud o la educación.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA STICKY INFERIOR -->
+    <div id="sticky-cta" class="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-3 md:p-4 z-50 flex flex-col items-center justify-center shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.05)] slide-up">
+        
+        <a href="https://pay.hotmart.com/F107211861G" 
+           onclick="handleCheckoutClick(event)"
+           class="w-full max-w-md bg-brand-orange hover:bg-[#EA580C] text-white text-center font-extrabold py-3.5 px-6 rounded-full text-base md:text-lg transition-transform active:scale-95 shadow-lg shadow-brand-orange/30 flex items-center justify-center gap-2">
+            ACCEDER A GUÍA EN CALMA — $14.99
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+        
+        <div class="mt-2 text-xs font-semibold text-slate-500 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            Pago único &middot; Sin mensualidades
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        /* Lógica para rastreo del Pixel */
+
+        // 1. Variable para asegurar que InitiateCheckout solo dispare una vez por sesión en la página
+        let checkoutFired = false;
+
+        // Función que se ejecuta al hacer clic en el CTA
+        function handleCheckoutClick(e) {
+            if (!checkoutFired) {
+                // Dispara evento estándar de Meta Ads (InitiateCheckout)
+                if (typeof fbq === 'function') {
+                    fbq('track', 'InitiateCheckout', {
+                        value: 14.99,
+                        currency: 'USD',
+                        content_name: 'Guía en Calma + Bonus PDF'
+                    });
+                }
+                checkoutFired = true;
+                
+                // NOTA: No usamos e.preventDefault() porque queremos que el usuario 
+                // navegue inmediatamente a Hotmart mediante el href del <a>.
+                // El evento del pixel se despacha de forma asíncrona rápidamente.
+            }
+        }
+
+        // 2. Rastreo de ViewContent cuando el usuario llega a la sección de oferta
+        // Usando IntersectionObserver para dispararlo solo cuando es visible y solo una vez
+        document.addEventListener("DOMContentLoaded", () => {
+            const offerSection = document.getElementById('seccion-oferta');
+            let viewContentFired = false;
+
+            if (offerSection && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !viewContentFired) {
+                            if (typeof fbq === 'function') {
+                                fbq('track', 'ViewContent', {
+                                    content_ids: ['F107211861G'],
+                                    content_type: 'product',
+                                    content_name: 'Guía en Calma',
+                                    value: 14.99,
+                                    currency: 'USD'
+                                });
+                            }
+                            viewContentFired = true;
+                            observer.unobserve(offerSection);
+                        }
+                    });
+                }, { threshold: 0.3 }); // Se dispara cuando el 30% de la oferta es visible
+
+                observer.observe(offerSection);
+            }
+        });
+    </script>
+</body>
+</html>
