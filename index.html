@@ -1,3 +1,6 @@
+<div id="paypal-button-container"></div>
+
+<p id="paypal-status"></p>
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
@@ -486,5 +489,78 @@
             }
         });
     </script>
+<script src="https://www.paypal.com/sdk/js?client-id=Af11Fils0bdlcog3rYXHBL4LEkNwaGu3GuDkAO0Tx2Md5gshGBf15h6sYffU3EQkd-GcFH1k0agC-r-c&currency=USD&intent=capture"></script>
+
+<script>
+const WORKER_URL =
+  "https://pdf-guiaencalma-prueba.alonsocorrea-1984.workers.dev";
+
+paypal.Buttons({
+
+  createOrder: async () => {
+    const response = await fetch(
+      `${WORKER_URL}/paypal-create-order`,
+      {
+        method: "POST"
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error(data);
+      throw new Error("No se pudo crear la orden.");
+    }
+
+    return data.id;
+  },
+
+  onApprove: async (data) => {
+    const status = document.getElementById("paypal-status");
+
+    status.textContent = "Procesando tu pago...";
+
+    const response = await fetch(
+      `${WORKER_URL}/paypal-capture-order`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          orderID: data.orderID
+        })
+      }
+    );
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error(result);
+      status.textContent =
+        "No pudimos completar el pago. Inténtalo nuevamente.";
+      return;
+    }
+
+    status.innerHTML = `
+      <strong>¡Pago realizado correctamente!</strong><br>
+      Tu PDF será enviado automáticamente a tu correo.
+    `;
+  },
+
+  onCancel: () => {
+    document.getElementById("paypal-status").textContent =
+      "El pago fue cancelado.";
+  },
+
+  onError: (err) => {
+    console.error(err);
+
+    document.getElementById("paypal-status").textContent =
+      "Ocurrió un error con PayPal. Inténtalo nuevamente.";
+  }
+
+}).render("#paypal-button-container");
+</script>
 </body>
 </html>
